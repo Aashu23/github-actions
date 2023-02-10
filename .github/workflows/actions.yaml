@@ -6,18 +6,18 @@ on:
   push:
     branches:
       - main
-      - 'feature/*'
-      - 'feature/**'
-      - '!feature/featA'
+#      - 'feature/*'
+#      - 'feature/**'
+#      - '!feature/featA'
 #    branches-ignore:  can't have both at the same time
 #      - develop
-    tags:
-      - v1.*
+#    tags:
+#      - v1.*
 #    paths-ignore:
 #      - 'doc/**'
-    paths:
-      - '**.js'
-      - '!file1.js'
+#    paths:
+#      - '**.js'
+#      - '!file1.js'
 #  pull_request:
 #    types: [open, closed, assigned, reopen]
 
