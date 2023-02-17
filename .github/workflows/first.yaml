@@ -24,12 +24,12 @@ jobs:
       - name: Directory Bash
         run: pwd
         shell: bash
-    send-repository-event:
-      runs-on: ubuntu-latest
-      steps:
-        - name: trigger repository dispatch events
-          run: |
-            curl -X POST https://github.com/Aashu23/github-actions/dispatches \
-            -H 'Accept: application/vnd.github.everest-preview+json' \
-            -H "Authorization: token ${{ secrets.PAT }}"  \
-            --data '{"event_type": "test-run", "client_payload": { "workflow": "Shell Commands" }}'
+  send-repository-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: trigger repository dispatch events
+        run: |
+          curl -X POST https://github.com/Aashu23/github-actions/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -H "Authorization: token ${{ secrets.PAT }}"  \
+          --data '{"event_type": "test-run", "client_payload": { "workflow": "Shell Commands" }}'
