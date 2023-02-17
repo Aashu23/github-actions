@@ -44,12 +44,9 @@ jobs:
         run: echo "${{ steps.greet.outputs.time }}"
   call-reusable-workflow:
     needs: [run-github-actions]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call reusable workflow
-        uses: ./.github/workflows/reusable-workflow.yaml
-        with:
-          VAR1: 'Variable String'
-        secrets:
-          TEST_SECRET: ${{secrets.TEST_SECRET}}
+    uses: ./.github/workflows/reusable-workflow.yaml
+    with:
+      VAR1: 'Variable String'
+    secrets:
+      TEST_SECRET: ${{secrets.TEST_SECRET}}
 
