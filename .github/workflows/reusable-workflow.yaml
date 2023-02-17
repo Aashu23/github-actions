@@ -1,0 +1,22 @@
+name: ReusableWorkflow
+on:
+  workflow_call:
+    inputs:
+      VAR1:
+        description: 'Test variable 1'
+        required: true
+        type: string
+    secrets:
+      TEST_SECRET:
+        required: true
+jobs:
+  reusable-workflow-job:
+    runs-on: ubuntu-latest
+    env:
+      ENV1: ${{inputs.VAR1}}
+      SECRET1: ${{secrets.TEST_SECRET}}
+    steps:
+      - name: Log Info
+        run: |
+          echo ${ENV1}
+          echo ${SECRET1}
