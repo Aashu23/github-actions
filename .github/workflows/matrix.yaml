@@ -1,7 +1,6 @@
 name: UseMatrix
 on:
   repository_dispatch:
-    branches: [main]
 defaults:
   run:
     shell: bash
