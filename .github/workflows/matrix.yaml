@@ -1,0 +1,11 @@
+name: UseMatrix
+on: [push]
+jobs:
+  use-matrix-job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        value: [10, 20, 30]
+    steps:
+      - name: Print matrx values
+        run: echo ${{matrix.value}}
