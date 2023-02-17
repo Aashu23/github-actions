@@ -50,11 +50,14 @@ jobs:
     secrets:
       TEST_SECRET: ${{secrets.TEST_SECRET}}
   upload-artifacts:
-    uses: actions/upload-artifact@v3
-    with:
-      name: test
-      path: src/test.txt
-      retention-days: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: test
+          path: src/test.txt
+          retention-days: 5
   download-artifacts:
     needs: upload-artifacts
     runs-on: ubuntu-latest
