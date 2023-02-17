@@ -1,5 +1,7 @@
 name: UseMatrix
-on: [push]
+on:
+  repository_dispatch:
+    branches: [main]
 defaults:
   run:
     shell: bash
@@ -12,3 +14,8 @@ jobs:
     steps:
       - name: Print matrx values
         run: echo ${{matrix.value}}
+  print-dispatch-details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log details
+        run: echo ${{github.event.client_payload.workflow}}
