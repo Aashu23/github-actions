@@ -1,0 +1,8 @@
+name: One
+on: [push]
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event
+        run: echo ${{github.event}}

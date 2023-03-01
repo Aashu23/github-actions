@@ -1,0 +1,12 @@
+name: Two
+on:
+  workflow_run:
+    workflows: [One]
+    types: [completed]
+    branches: [main]
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event
+        run: echo ${{github.event}}
