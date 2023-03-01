@@ -4,6 +4,7 @@ on:
     workflows: [One]
     types: [completed]
     branches: [main]
+  workflow_dispatch:
 jobs:
   first-job:
     runs-on: ubuntu-latest
